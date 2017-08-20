@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
 
-  MatrixXd input = MatrixXd::Random(8,16);
+  MatrixXd input = MatrixXd::Random(32,16);
   LogisticLayer h1 (16, 512);
   LogisticLayer h2 (512, 1024);
   LogisticLayer h3 (1024, 4);

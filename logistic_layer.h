@@ -1,10 +1,9 @@
 #include <Eigen/Dense>
 
 class LogisticLayer {
+  Eigen::MatrixXd w;
+  Eigen::VectorXd b;
   public:
-
-    Eigen::MatrixXd w;
-    Eigen::VectorXd b;
     LogisticLayer (int, int);
     LogisticLayer (Eigen::MatrixXd, Eigen::VectorXd);
     Eigen::MatrixXd activations (Eigen::MatrixXd);

@@ -1,3 +1,4 @@
+#include <iostream>
 #include <unsupported/Eigen/MatrixFunctions>
 #include "logistic_layer.h"
 
@@ -12,6 +13,7 @@ LogisticLayer::LogisticLayer (Eigen::MatrixXd weights, Eigen::VectorXd bias) {
 }
 
 Eigen::MatrixXd LogisticLayer::activations (Eigen::MatrixXd input) {
-  Eigen::MatrixXd z = (input.matrix() * w);//.array().colwise() + b.array();
+  Eigen::MatrixXd B = b.replicate(1,input.rows()).transpose();
+  Eigen::MatrixXd z = (input * w) + B;
   return (1.0 + (-z).array().exp()).inverse().matrix();
 }
